@@ -30,7 +30,7 @@ button {
     width: 100%;
     background-image: linear-gradient(bottom, #ff494c, #ff5b7a);
     background-image: -webkit-linear-gradient(bottom, #ff494c, #ff5b7a);
-    background-image: -ms-linear-gradient(bottom, #ff494c, #ff5b7a);
+    background-image: -moz-linear-gradient(to bottom, #ff494c, #ff5b7a);
     background-image: -o-linear-gradient(bottom, #ff494c, #ff5b7a);
 }
 
@@ -39,4 +39,17 @@ button {
     margin-bottom: 10px;
     padding: 5px;
     height: 50px;
+}
+
+.listTasks {
+    background-color: white;
+    padding: 15px;
+    display: none;
+}
+
+.task-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 5px;
 }
