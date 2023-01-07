@@ -1,5 +1,7 @@
 let div = document.querySelector('.container');
 let listTask = document.querySelector('.listTasks');
+let formSection = document.querySelector('.form-section');
+listTask.style.width = formSection.offsetWidth + "px";
 div.style.height = window.innerHeight + "px";
 
 let input = document.querySelector('input');
@@ -25,6 +27,7 @@ function createTask()  {
 
     let inputCheckBox = document.createElement('input');
     inputCheckBox.setAttribute('type', 'checkbox');
+    inputCheckBox.style.height = "15px"
 
     let paragrah = document.createElement('p');
     let text = document.createTextNode(input.value);
