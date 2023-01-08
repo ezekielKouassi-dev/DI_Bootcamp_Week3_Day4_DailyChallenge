@@ -19,37 +19,49 @@ function addTask() {
 
 function createTask()  {
 
+
+    // supprimer les taches affiché à l'écran avant de charger une nouvelle liste
+    let secs = document.querySelectorAll('section');
+    secs.forEach(element => {
+        element.remove();
+    })
+
+    // ajouter la nouvelle tache à la liste
     tasks.push(input.value);
 
-    let section = document.createElement('section');
-    section.classList.add('task-section');
-    let delBtn = document.createElement('button');
-    let delBtnText = document.createTextNode('X');
-    delBtn.appendChild(delBtnText);
-    delBtn.style.backgroundColor = "red";
-    delBtn.style.marginLeft = "2px";
+    tasks.forEach(element => {
 
-    let inputCheckBox = document.createElement('input');
-    inputCheckBox.setAttribute('type', 'checkbox');
-    inputCheckBox.setAttribute('name', 'check');
-    inputCheckBox.style.marginLeft = "2px";
+        let section = document.createElement('section');
+        section.classList.add('task-section');
+        let delBtn = document.createElement('button');
+        let delBtnText = document.createTextNode('X');
+        delBtn.appendChild(delBtnText);
+        delBtn.style.backgroundColor = "red";
+        delBtn.style.marginLeft = "2px";
 
-    let paragrah = document.createElement('label');
-    paragrah.setAttribute('for', 'check');
-    let text = document.createTextNode(input.value);
-    paragrah.appendChild(text);
+        let hr = document.createElement('hr');
 
-    section.appendChild(delBtn);
-    section.appendChild(inputCheckBox);
-    section.appendChild(paragrah);
+        let inputCheckBox = document.createElement('input');
+        inputCheckBox.setAttribute('type', 'checkbox');
+        inputCheckBox.setAttribute('name', 'check');
+        inputCheckBox.style.marginLeft = "2px";
 
-    listTask.style.display = 'flex';
-    listTask.style.flexDirection = 'column';
-    listTask.style.justifyContent = 'space-evenly';
-    listTask.appendChild(section);
-    
+        let paragrah = document.createElement('label');
+        paragrah.setAttribute('for', 'check');
+        let text = document.createTextNode(element);
+        paragrah.appendChild(text);
 
-    console.log(section);
+        section.appendChild(delBtn);
+        section.appendChild(inputCheckBox);
+        section.appendChild(paragrah);
+
+        listTask.style.display = 'flex';
+        listTask.style.flexDirection = 'column';
+        listTask.style.justifyContent = 'space-evenly';
+        listTask.appendChild(section);
+    });
+
+    return;
 
 }
 let btnAdd = document.querySelector('button');
